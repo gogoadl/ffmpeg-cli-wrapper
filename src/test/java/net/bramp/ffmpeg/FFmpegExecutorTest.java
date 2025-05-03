@@ -280,7 +280,6 @@ public class FFmpegExecutorTest {
 
     String tempDir = System.getProperty("java.io.tmpdir");
 
-
     FFmpegBuilder builder =
             new FFmpegBuilder()
                     .setInput(in)
@@ -307,8 +306,7 @@ public class FFmpegExecutorTest {
             name.startsWith(passPrefix) && name.contains(".log")
     );
 
-    assertThat("Passlog files should be deleted",
-            remainingFiles == null || remainingFiles.length == 0, is(true));
+    assertEquals(true, remainingFiles == null || remainingFiles.length == 0);
   }
 
   protected void runAndWait(FFmpegJob job) throws ExecutionException, InterruptedException {
